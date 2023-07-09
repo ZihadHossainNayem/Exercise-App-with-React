@@ -16,7 +16,7 @@ function App() {
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/exercises/:id" element={<Exercises />} />
+          <Route path="/exercise/:id" element={<Exercises />} />
         </Routes>
         <Footer />
       </div>

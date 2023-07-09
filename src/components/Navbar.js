@@ -10,14 +10,25 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
       <div className="flex items-center justify-between w-full">
         {/* logo & menu*/}
         <div className="flex items-center md:gap-24 gap-8">
-          <p className="flex items-center gap-2 ">
+          <Link to="/" className="flex items-center gap-2 ">
             <IoIosFitness size={30} />
             <span className="font-semibold md:text-2xl text-xl">Exercise.</span>
-          </p>
+          </Link>
 
           <div className="flex md:gap-8 gap-4 ">
-            <Link to="/">Home</Link>
-            <a href="#exercises">Exercises</a>
+            <Link
+              to="/"
+              className="border-2 border-transparent hover:border-b-[#FF5733]"
+            >
+              Home
+            </Link>
+
+            <a
+              href="#exercises"
+              className="border-2 border-transparent hover:border-b-[#FF5733]"
+            >
+              Exercises
+            </a>
           </div>
         </div>
         {/* dark mode button */}
