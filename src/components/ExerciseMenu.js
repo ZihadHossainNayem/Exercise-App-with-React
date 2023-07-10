@@ -30,12 +30,12 @@ export const ExerciseMenu = ({ exercises, setExercises, bodyPart }) => {
       if (bodyPart === "all") {
         exercisesData = await fetchData(
           "https://exercisedb.p.rapidapi.com/exercises",
-          options
+          options,
         );
       } else {
         exercisesData = await fetchData(
           `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
-          options
+          options,
         );
       }
       setExercises(exercisesData);
