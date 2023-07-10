@@ -28,7 +28,7 @@ export const ExerciseDetails = ({ detailsData }) => {
           src={gifUrl}
           alt={name}
           loading="lazy"
-          className="md:h-[600px] object-cover mt-4"
+          className="md:h-[460px] object-cover mt-4"
         />
       </div>
       <div className="my-auto">

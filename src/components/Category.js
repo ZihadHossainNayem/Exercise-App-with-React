@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Card } from "./Card";
 import { AiFillCaretDown } from "react-icons/ai";
 import { AiFillCaretUp } from "react-icons/ai";
+import { ExerciseCard } from "../components/ExerciseCard";
 
-export const Category = ({ data, bodyPart, setBodyPart }) => {
+export const Category = ({ data, bodyPart, setBodyPart, isBodyPart }) => {
   const [showMore, setShowMore] = useState(false);
 
-  const displayedData = showMore ? data : data.slice(0, 4); // Show all data if showMore is true, otherwise show only the first 5 items
+  const displayedData = showMore ? data : data.slice(0, 8); // Show all data if showMore is true, otherwise show only the first 5 items
 
   return (
     <div className="lg:mx-44 md:mx-16 mx-2">
@@ -17,7 +18,11 @@ export const Category = ({ data, bodyPart, setBodyPart }) => {
             itemID={item.id || item}
             title={item.id || item}
           >
-            <Card item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+            {isBodyPart ? (
+              <Card item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+            ) : (
+              <ExerciseCard exercises={item} />
+            )}
           </div>
         ))}
       </div>

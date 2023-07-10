@@ -15,7 +15,7 @@ export const Search = ({ setExercises, bodyPart, setBodyPart }) => {
     const fetchExcData = async () => {
       const bodyPartData = await fetchData(
         "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-        options,
+        options
       );
 
       setBodyParts(["all", ...bodyPartData]);
@@ -28,14 +28,14 @@ export const Search = ({ setExercises, bodyPart, setBodyPart }) => {
     if (search) {
       const data = await fetchData(
         "https://exercisedb.p.rapidapi.com/exercises",
-        options,
+        options
       );
       const searched = data.filter(
         (eachExercise) =>
           eachExercise.name.toLowerCase().includes(search) ||
           eachExercise.bodyPart.toLowerCase().includes(search) ||
           eachExercise.equipment.toLowerCase().includes(search) ||
-          eachExercise.target.toLowerCase().includes(search),
+          eachExercise.target.toLowerCase().includes(search)
       );
       setExercises("");
       setExercises(searched);
@@ -69,6 +69,7 @@ export const Search = ({ setExercises, bodyPart, setBodyPart }) => {
           data={bodyParts}
           bodyParts={bodyParts}
           setBodyPart={setBodyPart}
+          isBodyPart
         />
       </div>
     </div>

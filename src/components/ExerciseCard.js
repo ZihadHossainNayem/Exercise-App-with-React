@@ -20,7 +20,7 @@ export const ExerciseCard = ({ exercises }) => {
               {exercises.target}
             </button>
           </div>
-          <div className="text-center pt-6 pb-4 text-sm md:text-base text-[#18191a] font-medium capitalize">
+          <div className="h-[70px] flex items-center justify-center text-center m-4 text-sm md:text-lg text-[#18191a] font-medium capitalize">
             {exercises.name}
           </div>
         </Link>

@@ -9,6 +9,9 @@ import { MatchingExercise } from "../components/MatchingExercise";
 export const Exercises = () => {
   const [detailsData, setDetailsData] = useState({});
   const [videos, setVideos] = useState([]);
+  const [targetMuscle, setTargetMuscle] = useState([]);
+  const [equipment, setEquipment] = useState([]);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,6 +30,18 @@ export const Exercises = () => {
         ytOptions
       );
       setVideos(videoData.contents);
+
+      const targetMuscleData = await fetchData(
+        `${exerciseUrl}/exercises/target/${exerciseDetailsData.target}`,
+        options
+      );
+      setTargetMuscle(targetMuscleData);
+
+      const equipmentData = await fetchData(
+        `${exerciseUrl}/exercises/equipment/${exerciseDetailsData.equipment}`,
+        options
+      );
+      setEquipment(equipmentData);
     };
     fetchExerciseData();
   }, [id]);
@@ -35,7 +50,7 @@ export const Exercises = () => {
     <div>
       <ExerciseDetails detailsData={detailsData} />
       <Videos videos={videos} name={detailsData.name} />
-      <MatchingExercise />
+      <MatchingExercise targetMuscle={targetMuscle} equipment={equipment} />
     </div>
   );
 };
