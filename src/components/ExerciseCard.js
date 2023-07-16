@@ -13,10 +13,10 @@ export const ExerciseCard = ({ exercises }) => {
             className="transition-transform hover:scale-125 py-8"
           />
           <div className="py-4 px-2 flex items-center justify-center gap-4">
-            <button className="capitalize px-2 py-1 text-xs md:text-base rounded-md text-[#ff5733] border border-[#ff5733] hover:bg-[#ff5733] hover:text-white">
+            <button className="h-[50px] md:h-auto capitalize px-2 py-1 text-xs md:text-base rounded-md text-[#ff5733] border border-[#ff5733] hover:bg-[#ff5733] hover:text-white">
               {exercises.bodyPart}
             </button>
-            <button className="capitalize px-2 py-1 text-xs md:text-base rounded-md text-[#ff5733] border border-[#ff5733] hover:bg-[#ff5733] hover:text-white">
+            <button className="h-[50px] md:h-auto  capitalize px-2 py-1 text-xs md:text-base rounded-md text-[#ff5733] border border-[#ff5733] hover:bg-[#ff5733] hover:text-white">
               {exercises.target}
             </button>
           </div>
