@@ -43,7 +43,7 @@ export const Search = ({ setExercises, bodyPart, setBodyPart }) => {
   };
 
   return (
-    <div>
+    <div name="search">
       <h1 className="text-center md:text-3xl text-xl font-semibold pt-16">
         Discover these Incredible Exercises for a Stronger Body
       </h1>
